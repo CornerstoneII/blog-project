@@ -1,8 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import articleContent from "./article-content";
 
 const ArticleList = () => (
   <>
-    <h1> Article List!</h1>
+    <h1> Articles</h1>
+    {articleContent.map((article, key) => (
+      <Link
+        className="article-list-item"
+        key={key}
+        to={`/article/${article.name}`}
+      >
+        <h3>{article.title}</h3>
+        {/* Sample texts from content js file */}
+        <p>{article.content[0].substring(0, 150)}...</p>
+      </Link>
+    ))}
   </>
 );
 
