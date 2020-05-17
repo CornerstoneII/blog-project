@@ -4,6 +4,7 @@ import HomePage from "./pages/homepage";
 import AboutPage from "./pages/aboutpage";
 import ArticlePage from "./pages/articlepage";
 import ArticleList from "./pages/articlelist";
+import NavBar from "./navBar";
 import "./App.css";
 
 class App extends Component {
@@ -11,6 +12,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
+          <NavBar />
           <div id="page-body">
             <Route path="/" component={HomePage} exact />
             <Route path="/about" component={AboutPage} exact />
